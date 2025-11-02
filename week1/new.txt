@@ -1,0 +1,6 @@
+dotfiles
+flake.lock
+flake.nix
+home
+hosts
+modules
