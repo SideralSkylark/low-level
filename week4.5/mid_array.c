@@ -1,5 +1,5 @@
 #include <stdio.h>
-float mid(int array[], int size);
+float mid(const int array[], int size);
 
 int main(void) {
     int size = 6;
@@ -7,7 +7,7 @@ int main(void) {
     printf("%f", mid(array, size));
 }
 
-float mid(int array[], int size) {
+float mid(const int array[], int size) {
     if (size <= 0) return 0;
 
     float mid = 0;

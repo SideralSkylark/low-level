@@ -1,22 +1,27 @@
 #include <climits>
+#include <stddef.h>
+#include <stdio.h>
 
+int *min(int *array, size_t size);
 
 int main(void) {
     int size = 6;
-    int a = 3, b = 6, c = 2, d = 4, e = 0, f = 8;
-    int *array[6] = {&a, &b, &c, &d, &e, &f};
+    int array[] = {3,6,2,4,0,8};
 
 
+    printf("Min number is: %d", *min(array, size));
 }
 
-int *min(int *array, int size) {
-    int *min = INT_MAX;
+int *min(int *array, size_t size) {
+    if (size == 0) return 0;
 
-    for (int i = 0; i < size; i++) {
-        if (array[i] < min) {
-            min = array[i];
+    int *min_p = &array[0];
+
+    for (size_t i = 1; i < size; i++) {
+        if (array[i] < *min_p) {
+            min_p = &array[i];
         }
     }
 
-    return min;
+    return min_p;
 }
